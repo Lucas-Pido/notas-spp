@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas SPP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #90baf0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            background: #fff url('logo_spp.png') no-repeat center 40px;
+            background-size: 120px auto;
+            padding: 90px 30px 30px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            color: #0c0e81;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #012dbe;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #resultado {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+        .notas-semestre {
+            display: none;
+            margin-top: 20px;
+        }
+        .formula {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+     <div class="container">
+        <h1>Notas SPP</h1>
+
+        <div class="form-group">
+            <label for="semestreSelect">Escolha o Semestre:</label>
+            <select id="semestreSelect">
+                <option value="">-- Selecione --</option>
+                <option value="1">1º Semestre</option>
+                <option value="2">2º Semestre</option>
+                <option value="3">3º Semestre</option>
+                <option value="4">4º Semestre</option>
+                <option value="5">5º Semestre</option>
+                <option value="6">6º Semestre</option>
+            </select>
+        </div>
+
+        <!-- 1º Semestre -->
+        <div id="semestre1" class="notas-semestre">
+            <p class="formula">Média Final = ((Trab 1 + Trab 2 + Trab 3) / 3 + Nota Prova) / 2</p>
+            <div class="form-group"><label for="s1-trab1">Trabalho 1:</label><input type="number" id="s1-trab1" placeholder="Nota"></div>
+            <div class="form-group"><label for="s1-trab2">Trabalho 2:</label><input type="number" id="s1-trab2" placeholder="Nota"></div>
+            <div class="form-group"><label for="s1-trab3">Trabalho 3:</label><input type="number" id="s1-trab3" placeholder="Nota"></div>
+            <div class="form-group"><label for="s1-prova">Nota da Prova:</label><input type="number" id="s1-prova" placeholder="Nota"></div>
+        </div>
+
+        <!-- 2º Semestre -->
+        <div id="semestre2" class="notas-semestre">
+             <p class="formula">Média Final = ((Soma de 8 Trabalhos) / 8 + Nota Prova) / 2</p>
+            <div class="form-group"><label for="s2-trab1">Trabalho 1:</label><input type="number" id="s2-trab1" placeholder="Nota"></div>
+            <div class="form-group"><label for="s2-trab2">Trabalho 2:</label><input type="number" id="s2-trab2" placeholder="Nota"></div>
+            <div class="form-group"><label for="s2-trab3">Trabalho 3:</label><input type="number" id="s2-trab3" placeholder="Nota"></div>
+            <div class="form-group"><label for="s2-trab4">Trabalho 4:</label><input type="number" id="s2-trab4" placeholder="Nota"></div>
+            <div class="form-group"><label for="s2-trab5">Trabalho 5:</label><input type="number" id="s2-trab5" placeholder="Nota"></div>
+            <div class="form-group"><label for="s2-trab6">Trabalho 6:</label><input type="number" id="s2-trab6" placeholder="Nota"></div>
+            <div class="form-group"><label for="s2-trab7">Trabalho 7:</label><input type="number" id="s2-trab7" placeholder="Nota"></div>
+            <div class="form-group"><label for="s2-trab8">Trabalho 8:</label><input type="number" id="s2-trab8" placeholder="Nota"></div>
+            <div class="form-group"><label for="s2-prova">Nota da Prova:</label><input type="number" id="s2-prova" placeholder="Nota"></div>
+        </div>
+        
+        <!-- 3º Semestre -->
+        <div id="semestre3" class="notas-semestre">
+            <p class="formula">Média Final = ((Trab 1 + Trab 2) / 2 + Nota Prova) / 2</p>
+            <div class="form-group"><label for="s3-trab1">Trabalho 1:</label><input type="number" id="s3-trab1" placeholder="Nota"></div>
+            <div class="form-group"><label for="s3-trab2">Trabalho 2:</label><input type="number" id="s3-trab2" placeholder="Nota"></div>
+            <div class="form-group"><label for="s3-prova">Nota da Prova:</label><input type="number" id="s3-prova" placeholder="Nota"></div>
+        </div>
+
+        <!-- 4º Semestre -->
+        <div id="semestre4" class="notas-semestre">
+            <p class="formula">Média Final = (Trab 1 + Trab 2) / 2</p>
+            <div class="form-group"><label for="s4-trab1">Trabalho 1:</label><input type="number" id="s4-trab1" placeholder="Nota"></div>
+            <div class="form-group"><label for="s4-trab2">Trabalho 2:</label><input type="number" id="s4-trab2" placeholder="Nota"></div>
+        </div>
+
+        <!-- 5º Semestre -->
+        <div id="semestre5" class="notas-semestre">
+            <p class="formula">Média Final = (NE + RA + PO) / 3</p>
+            <div class="form-group"><label for="s5-ne">NE:</label><input type="number" id="s5-ne" placeholder="Nota"></div>
+            <div class="form-group"><label for="s5-ra">RA:</label><input type="number" id="s5-ra" placeholder="Nota"></div>
+            <div class="form-group"><label for="s5-po">PO:</label><input type="number" id="s5-po" placeholder="Nota"></div>
+        </div>
+        
+        <!-- 6º Semestre -->
+        <div id="semestre6" class="notas-semestre">
+            <p class="formula">Média Final = (NE + RA + QH) / 3</p>
+            <div class="form-group"><label for="s6-ne">NE:</label><input type="number" id="s6-ne" placeholder="Nota"></div>
+            <div class="form-group"><label for="s6-ra">RA:</label><input type="number" id="s6-ra" placeholder="Nota"></div>
+            <div class="form-group"><label for="s6-qh">QH:</label><input type="number" id="s6-qh" placeholder="Nota"></div>
+        </div>
+
+        <button onclick="calcularMedia()">Calcular Média</button>
+        <p id="resultado"></p>
+    </div>
+
+     <script>
+        document.getElementById('semestreSelect').addEventListener('change', function() {
+            document.querySelectorAll('.notas-semestre').forEach(div => div.style.display = 'none');
+            document.getElementById('resultado').innerText = '';
+            
+            const semestreSelecionado = this.value;
+            if (semestreSelecionado) {
+                document.getElementById('semestre' + semestreSelecionado).style.display = 'block';
+            }
+        });
+
+        function calcularMedia() {
+            const semestre = document.getElementById('semestreSelect').value;
+            const resultadoDiv = document.getElementById('resultado');
+            let mediaFinal = 0;
+
+            if (!semestre) {
+                resultadoDiv.innerText = 'Por favor, escolha um semestre.';
+                resultadoDiv.style.color = 'red';
+                return;
+            }
+
+            // Função auxiliar para pegar o valor do input como número
+            const getNota = (id) => parseFloat(document.getElementById(id).value) || 0;
+
+            switch (semestre) {
+                case '1':
+                    const mediaTrabalhos1 = (getNota('s1-trab1') + getNota('s1-trab2') + getNota('s1-trab3')) / 3;
+                    const notaProva1 = getNota('s1-prova');
+                    mediaFinal = (mediaTrabalhos1 + notaProva1) / 2;
+                    break;
+
+                case '2':
+                    const somaTrabalhos2 = ['s2-trab1', 's2-trab2', 's2-trab3', 's2-trab4', 's2-trab5', 's2-trab6', 's2-trab7', 's2-trab8']
+                                            .reduce((soma, id) => soma + getNota(id), 0);
+                    const mediaTrabalhos2 = somaTrabalhos2 / 8;
+                    const notaProva2 = getNota('s2-prova');
+                    mediaFinal = (mediaTrabalhos2 + notaProva2) / 2;
+                    break;
+                
+                case '3':
+                    const mediaTrabalhos3 = (getNota('s3-trab1') + getNota('s3-trab2')) / 2;
+                    const notaProva3 = getNota('s3-prova');
+                    mediaFinal = (mediaTrabalhos3 + notaProva3) / 2;
+                    break;
+
+                case '4':
+                    mediaFinal = (getNota('s4-trab1') + getNota('s4-trab2')) / 2;
+                    break;
+                
+                case '5':
+                    mediaFinal = (getNota('s5-ne') + getNota('s5-ra') + getNota('s5-po')) / 3;
+                    break;
+
+                case '6':
+                    mediaFinal = (getNota('s6-ne') + getNota('s6-ra') + getNota('s6-qh')) / 3;
+                    break;
+            }
+
+            resultadoDiv.style.color = mediaFinal >= 6 ? 'green' : 'red';
+            resultadoDiv.innerText = `A média final é: ${mediaFinal.toFixed(2)}`;
+        }
+    </script>
+
+</body>
+</html>
